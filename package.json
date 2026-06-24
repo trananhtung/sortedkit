@@ -1,0 +1,41 @@
+{
+  "name": "sortedkit",
+  "version": "0.1.0",
+  "description": "Zero-dependency TypeScript sorted collections: SortedSet and SortedMap backed by AVL tree. Port of Python sortedcontainers, Java TreeSet/TreeMap, C# SortedSet/SortedDictionary.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --forceExit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "sorted", "sortedset", "sortedmap", "avl-tree", "bst",
+    "floor", "ceiling", "range", "typescript", "zero-dependencies",
+    "sortedcontainers", "treeset", "treemap"
+  ],
+  "author": "trananhtung",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trananhtung/sortedkit.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  }
+}
